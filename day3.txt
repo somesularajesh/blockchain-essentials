@@ -1,0 +1,13 @@
+pragma solidity ^0.5.1;
+
+contract SimpleStorage{
+    event ValueChanged(string oldvalue,string newvalue);
+    string public value;
+    constructor(string memory _value) public{
+        value= _value;
+    }
+    function setValue(string memory _value) public{
+        emit ValueChanged(value,_value);
+        value=_value;
+    }
+}
